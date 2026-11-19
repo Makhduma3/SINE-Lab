@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SINE Lab · Security, Intelligence, Networks &amp; Edge · Trent University</title>
+<meta name="description" content="SINE Lab at Trent University Durham GTA researches AI-driven security for networked and edge systems, including an industrial IoT testbed, device behaviour profiling, intrusion detection, federated learning and trustworthy AI.">
+<link rel="icon" href="images/logo-shield-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/logo-shield-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="SINE Lab home">
+      <img class="brand-shield" src="images/logo-shield.svg" alt="" width="50" height="52">
+      <span class="brand-text"><span class="brand-name">SINE <span>Lab</span></span><span class="brand-sub">Trent University</span></span>
+    </a>
+    <div class="header-tools"><button class="beetle-toggle" id="beetleBtn" type="button" aria-label="Send the beetle home" title="Send the beetle home"><svg viewBox="0 0 24 24" aria-hidden="true"><g class="legs"><path d="M8.2 10.5 4 8.2M7.6 13.6H3.4M8.2 16.6 4 19"/><path d="M15.8 10.5 20 8.2M16.4 13.6h4.2M15.8 16.6 20 19"/></g><path class="ant" d="M10.6 5.4 8.8 2.4M13.4 5.4l1.8-3"/><circle class="hd" cx="12" cy="6.6" r="2.5"/><ellipse class="bd" cx="12" cy="14.2" rx="4.7" ry="6.2"/><path class="seam" d="M12 8.6v11.6"/><circle class="spot" cx="10" cy="12.4" r="1"/><circle class="spot" cx="14" cy="12.4" r="1"/><circle class="spot" cx="10.2" cy="16.6" r=".9"/><circle class="spot" cx="13.8" cy="16.6" r=".9"/></svg></button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="sr">Menu</span><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#testbed">Testbed</a>
+      <a href="#team">People</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#join" class="nav-cta">Join &amp; visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 60 C43.2 14.8 76.8 14.8 120.0 60 C163.2 105.2 196.8 105.2 240.0 60 C283.2 14.8 316.8 14.8 360.0 60 C403.2 105.2 436.8 105.2 480.0 60 C523.2 14.8 556.8 14.8 600.0 60 C643.2 105.2 676.8 105.2 720.0 60 C763.2 14.8 796.8 14.8 840.0 60 C883.2 105.2 916.8 105.2 960.0 60 C1003.2 14.8 1036.8 14.8 1080.0 60 C1123.2 105.2 1156.8 105.2 1200.0 60 C1243.2 14.8 1276.8 14.8 1320.0 60 C1363.2 105.2 1396.8 105.2 1440.0 60 C1483.2 14.8 1516.8 14.8 1560.0 60 C1603.2 105.2 1636.8 105.2 1680.0 60 C1723.2 14.8 1756.8 14.8 1800.0 60 C1843.2 105.2 1876.8 105.2 1920.0 60 C1963.2 14.8 1996.8 14.8 2040.0 60 C2083.2 105.2 2116.8 105.2 2160.0 60 C2203.2 14.8 2236.8 14.8 2280.0 60 C2323.2 105.2 2356.8 105.2 2400.0 60 C2443.2 14.8 2476.8 14.8 2520.0 60 C2563.2 105.2 2596.8 105.2 2640.0 60 C2683.2 14.8 2716.8 14.8 2760.0 60 C2803.2 105.2 2836.8 105.2 2880.0 60"/><path class="w2" d="M0 60 C43.2 14.8 76.8 14.8 120.0 60 C163.2 105.2 196.8 105.2 240.0 60 C283.2 14.8 316.8 14.8 360.0 60 C403.2 105.2 436.8 105.2 480.0 60 C523.2 14.8 556.8 14.8 600.0 60 C643.2 105.2 676.8 105.2 720.0 60 C763.2 14.8 796.8 14.8 840.0 60 C883.2 105.2 916.8 105.2 960.0 60 C1003.2 14.8 1036.8 14.8 1080.0 60 C1123.2 105.2 1156.8 105.2 1200.0 60 C1243.2 14.8 1276.8 14.8 1320.0 60 C1363.2 105.2 1396.8 105.2 1440.0 60 C1483.2 14.8 1516.8 14.8 1560.0 60 C1603.2 105.2 1636.8 105.2 1680.0 60 C1723.2 14.8 1756.8 14.8 1800.0 60 C1843.2 105.2 1876.8 105.2 1920.0 60 C1963.2 14.8 1996.8 14.8 2040.0 60 C2083.2 105.2 2116.8 105.2 2160.0 60 C2203.2 14.8 2236.8 14.8 2280.0 60 C2323.2 105.2 2356.8 105.2 2400.0 60 C2443.2 14.8 2476.8 14.8 2520.0 60 C2563.2 105.2 2596.8 105.2 2640.0 60 C2683.2 14.8 2716.8 14.8 2760.0 60 C2803.2 105.2 2836.8 105.2 2880.0 60"/></svg></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="kicker">Trent University · Durham GTA</p>
+      <h1>SINE Lab</h1>
+      <p class="hero-expand"><b>S</b>ecurity, <b>I</b>ntelligence, <b>N</b>etworks &amp; <b>E</b>dge</p>
+      <p class="hero-lead">Our research focuses on developing AI-based approaches to improve the security, privacy, and trustworthiness of networked and edge computing systems.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#research">Our research</a>
+        <a class="btn btn-ghost" href="#testbed">Inside the testbed</a>
+      </div>
+    </div>
+    <figure class="hero-visual net" id="net">
+      <svg viewBox="0 0 600 470" role="img" aria-labelledby="net-title net-desc">
+        <title id="net-title">The SINE testbed network</title>
+        <desc id="net-desc">Six device clusters send data to an aggregator, which forwards it to an edge server that records traffic with Zeek and tshark and produces labelled data. Moving dots show messages travelling through the network.</desc>
+        <g class="links">
+          <path id="p-f1" class="link" d="M188 48 C258 48 242 232 290 232"/>
+          <path id="p-f2" class="link" d="M188 122 C258 122 242 232 290 232"/>
+          <path id="p-f3" class="link" d="M188 196 C258 196 242 232 290 232"/>
+          <path id="p-f4" class="link" d="M188 270 C258 270 242 232 290 232"/>
+          <path id="p-l3" class="link" d="M188 344 C258 344 242 232 290 232"/>
+          <path id="p-l1" class="link" d="M188 418 C258 418 242 232 290 232"/>
+          <path id="p-edge" class="link link-core" d="M374 218 C400 150 410 230 438 190 S462 130 467 138"/>
+          <path id="p-data" class="link link-core" d="M506 171 C536 205 476 250 506 270 S526 300 506 318"/>
+        </g>
+        <g class="packets">
+          <circle r="4.5" fill="#3FD0B8"><animateMotion dur="4.2s" begin="-1.55s" repeatCount="indefinite"><mpath href="#p-f1"/></animateMotion></circle>
+          <circle r="4.5" fill="#E3C46A"><animateMotion dur="9.0s" begin="-1.33s" repeatCount="indefinite"><mpath href="#p-f2"/></animateMotion></circle>
+          <circle r="4.5" fill="#8FB8FF"><animateMotion dur="3.4s" begin="-1.26s" repeatCount="indefinite"><mpath href="#p-f3"/></animateMotion></circle>
+          <circle r="3.5" fill="none" stroke="#8FB8FF" stroke-width="2"><animateMotion dur="3.4s" begin="-2.96s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p-f3"/></animateMotion></circle>
+          <circle r="4.5" fill="#F2A65A"><animateMotion dur="3.8s" begin="-1.41s" repeatCount="indefinite"><mpath href="#p-f4"/></animateMotion></circle>
+          <circle r="3.5" fill="none" stroke="#F2A65A" stroke-width="2"><animateMotion dur="3.8s" begin="-3.31s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p-f4"/></animateMotion></circle>
+          <circle r="4.5" fill="#E58BB5"><animateMotion dur="6.0s" begin="-0.22s" repeatCount="indefinite"><mpath href="#p-l3"/></animateMotion></circle>
+          <circle r="4.5" fill="#9ED36A"><animateMotion dur="2.6s" begin="-0.96s" repeatCount="indefinite"><mpath href="#p-l1"/></animateMotion></circle>
+          <circle r="3.5" fill="none" stroke="#9ED36A" stroke-width="2"><animateMotion dur="2.6s" begin="-2.26s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#p-l1"/></animateMotion></circle>
+          <circle r="5" fill="#F4FFFC"><animateMotion dur="3.3s" begin="-0s" repeatCount="indefinite"><mpath href="#p-edge"/></animateMotion></circle>
+          <circle r="5" fill="#F4FFFC"><animateMotion dur="3.3s" begin="-1.1s" repeatCount="indefinite"><mpath href="#p-edge"/></animateMotion></circle>
+          <circle r="5" fill="#F4FFFC"><animateMotion dur="3.3s" begin="-2.2s" repeatCount="indefinite"><mpath href="#p-edge"/></animateMotion></circle>
+          <circle r="4.5" fill="#E3C46A"><animateMotion dur="3s" begin="-0.5s" repeatCount="indefinite"><mpath href="#p-data"/></animateMotion></circle>
+          <circle r="4.5" fill="#E3C46A"><animateMotion dur="3s" begin="-2.0s" repeatCount="indefinite"><mpath href="#p-data"/></animateMotion></circle>
+        </g>
+        <g class="nodes">
+          <g class="node" tabindex="0" role="button" data-node="f1" transform="translate(12 26)">
+            <rect width="176" height="44" rx="12"/>
+            <circle cx="22" cy="22" r="7" fill="#3FD0B8"/>
+            <text x="38" y="19" class="n-code">F1</text>
+            <text x="38" y="34" class="n-name">Sensors</text>
+          </g>
+          <g class="node" tabindex="0" role="button" data-node="f2" transform="translate(12 100)">
+            <rect width="176" height="44" rx="12"/>
+            <circle cx="22" cy="22" r="7" fill="#E3C46A"/>
+            <text x="38" y="19" class="n-code">F2</text>
+            <text x="38" y="34" class="n-name">RFID access</text>
+          </g>
+          <g class="node" tabindex="0" role="button" data-node="f3" transform="translate(12 174)">
+            <rect width="176" height="44" rx="12"/>
+            <circle cx="22" cy="22" r="7" fill="#8FB8FF"/>
+            <text x="38" y="19" class="n-code">F3</text>
+            <text x="38" y="34" class="n-name">LED actuators</text>
+          </g>
+          <g class="node" tabindex="0" role="button" data-node="f4" transform="translate(12 248)">
+            <rect width="176" height="44" rx="12"/>
+            <circle cx="22" cy="22" r="7" fill="#F2A65A"/>
+            <text x="38" y="19" class="n-code">F4</text>
+            <text x="38" y="34" class="n-name">Smart bulbs</text>
+          </g>
+          <g class="node" tabindex="0" role="button" data-node="l3" transform="translate(12 322)">
+            <rect width="176" height="44" rx="12"/>
+            <circle cx="22" cy="22" r="7" fill="#E58BB5"/>
+            <text x="38" y="19" class="n-code">L3</text>
+            <text x="38" y="34" class="n-name">Cameras</text>
+          </g>
+          <g class="node" tabindex="0" role="button" data-node="l1" transform="translate(12 396)">
+            <rect width="176" height="44" rx="12"/>
+            <circle cx="22" cy="22" r="7" fill="#9ED36A"/>
+            <text x="38" y="19" class="n-code">L1</text>
+            <text x="38" y="34" class="n-name">Industrial services</text>
+          </g>
+          <g class="node node-core" tabindex="0" role="button" data-node="agg" transform="translate(332 232)">
+            <circle r="52" class="halo"/><circle r="42"/>
+            <text y="-3" class="c-name">Aggregator</text><text y="13" class="c-sub">MQTT broker</text>
+          </g>
+          <g class="node node-core" tabindex="0" role="button" data-node="edge" transform="translate(506 132)">
+            <circle r="48" class="halo"/><circle r="39"/>
+            <text y="-3" class="c-name">Edge server</text><text y="12" class="c-sub">Zeek · tshark</text>
+          </g>
+          <g class="node node-data" tabindex="0" role="button" data-node="data" transform="translate(506 352)">
+            <rect x="-62" y="-32" width="124" height="64" rx="14"/>
+            <path d="M-40 12 C-30 -4 -20 -4 -10 12 S10 28 20 12 S34 -4 40 6" class="d-wave"/>
+            <text y="-10" class="c-name">Labelled data</text>
+          </g>
+        </g>
+      </svg>
+      <div class="net-tip" id="net-tip" role="status" aria-live="polite"><b>Tap a node</b><span>Explore the clusters, the aggregator and the edge server.</span></div>
+      <figcaption><span class="legend"><i class="lg-fill"></i>data message</span><span class="legend"><i class="lg-ring"></i>command reply</span><span class="legend"><i class="lg-gold"></i>labelled record</span></figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <dl class="facts">
+      <div><dt>30</dt><dd>devices in our IIoT testbed</dd></div>
+      <div><dt>6</dt><dd>device groups, from sensors to cameras</dd></div>
+      <div><dt>4</dt><dd>protocols: MQTT, MQTTS, Modbus, CoAP ((over TCP/UDP, plus HTTP for data forwarding)</dd></div>
+      
+    </dl>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div style="text-align: justify;">
+      <p class="eyebrow">About the lab</p>
+      <h2>Research at the meeting point of AI and cybersecurity</h2>
+      <p>Modern infrastructure, including industrial systems, smart environments, and critical services, increasingly relies on interconnected devices and edge computing. While these technologies improve connectivity and automation, they also introduce new cybersecurity challenges.</p>
+      <p>At <b>SINE Lab (Security, Intelligence, Networks, and Edge)</b>, we develop AI-driven approaches to detect, analyze, and mitigate cyber threats in networked, IoT, and edge computing environments. Our research focuses on intelligent intrusion detection, federated learning, large language models (LLMs) for security analysis and decision support, and intent-aware systems that enable adaptive cyber defence.</p>
+<p>We also investigate explainable and trustworthy AI to make security decisions more transparent, reliable, and understandable. Our goal is to move beyond traditional threat detection toward intelligent systems that can interpret security events and support effective responses.</p>
+<p>Our research is supported by a physical IoT testbed developed and maintained by our research team, alongside experiments using publicly available cybersecurity datasets. This allows us to study real-world device behaviour, evaluate emerging cyber threats, and develop practical security solutions for connected and mission-critical environments.</p>
+    </div>
+    <aside class="why-card">
+      <p class="eyebrow">Why "SINE"?</p>
+      <svg class="why-wave" viewBox="0 0 240 60" aria-hidden="true"><path d="M4 30 C24 4 44 4 64 30 S104 56 124 30 S164 4 184 30 S224 56 236 30" fill="none" stroke="#1E9C89" stroke-width="3" stroke-linecap="round"/></svg>
+      <p style="text-align: justify;">A sine wave represents a steady, predictable rhythm. Connected devices have rhythms too: sensors report data periodically, and controllers respond to commands. At SINE, we use artificial intelligence to understand these patterns, detect unusual activities, and develop intelligent, adaptive security solutions for networked and edge systems.</p>
+    </aside>
+  </div>
+</section>
+
+
+<!-- RESEARCH -->
+<section class="section section-alt" id="research">
+  <div class="wrap">
+    <p class="eyebrow">Research</p>
+    <h2>Research Directions</h2>
+
+    <style>
+      #research .r-body p {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+      }
+    </style>
+
+    <ol class="research-list">
+
+      <!-- 01: IoT Testbeds and Datasets -->
+      <li class="r-card">
+        <div class="r-num">01</div>
+        <div class="r-body">
+          <h3>Intent-Aware IoT Testbeds and Cybersecurity Datasets</h3>
+          <p>
+            We develop real-world IoT and edge computing testbeds
+            to study device behaviour, network communication, and
+            emerging cyber threats. Our research focuses on collecting
+            network traffic alongside device activities and
+            communication intent to create realistic, richly labelled
+            datasets for developing and evaluating cybersecurity
+            solutions.
+          </p>
+          <ul class="tags">
+            <li>IoT Testbeds</li>
+            <li>Intent-Aware Datasets</li>
+            <li>MQTT / CoAP</li>
+            <li>Network Traffic</li>
+            <li>Zeek</li>
+          </ul>
+        </div>
+        <span class="status status-active">Active</span>
+      </li>
+
+      <!-- 02: Intrusion Detection -->
+      <li class="r-card">
+        <div class="r-num">02</div>
+        <div class="r-body">
+          <h3>AI-Driven Intrusion Detection and Threat Analysis</h3>
+          <p>
+            We develop AI and machine learning approaches to detect
+            and analyze cyberattacks in IoT networks and critical
+            infrastructure. Our research investigates device
+            behaviour profiling, anomaly detection, lightweight
+            learning models, and cross-dataset generalization to
+            improve threat detection across diverse network
+            environments.
+          </p>
+          <ul class="tags">
+            <li>Intrusion Detection</li>
+            <li>Anomaly Detection</li>
+            <li>Device Profiling</li>
+            <li>Deep Learning</li>
+            <li>Edge AI</li>
+          </ul>
+        </div>
+        <span class="status status-active">Active</span>
+      </li>
+
+      <!-- 03: Federated Learning -->
+      <li class="r-card">
+        <div class="r-num">03</div>
+        <div class="r-body">
+          <h3>Federated and Privacy-Preserving AI for Cybersecurity</h3>
+          <p>
+            We investigate federated learning approaches that enable
+            distributed devices and networks to collaboratively train
+            AI models without directly sharing their raw data.
+            Our research focuses on improving detection performance,
+            model personalization, communication efficiency, and
+            adaptability across heterogeneous IoT and edge
+            environments.
+          </p>
+          <ul class="tags">
+            <li>Federated Learning</li>
+            <li>Distributed AI</li>
+            <li>Privacy</li>
+            <li>Personalization</li>
+            <li>Edge Computing</li>
+          </ul>
+        </div>
+        <span class="status status-active">Active</span>
+      </li>
+
+      <!-- 04: Large Language Models -->
+      <li class="r-card">
+        <div class="r-num">04</div>
+        <div class="r-body">
+          <h3>Large Language Models for Cybersecurity</h3>
+          <p>
+            We explore the use of large language models (LLMs) to
+            support cyber threat analysis, security incident
+            investigation, and intelligent decision-making.
+            Our research investigates how LLMs can interpret
+            security events, use knowledge graphs and structured
+            evidence, generate meaningful explanations, and assist
+            security analysts in understanding complex attacks.
+          </p>
+          <ul class="tags">
+            <li>LLMs</li>
+            <li>Knowledge Graphs</li>
+            <li>Security Reasoning</li>
+            <li>Incident Analysis</li>
+            <li>Agentic AI</li>
+          </ul>
+        </div>
+        <span class="status status-active">Active</span>
+      </li>
+
+      <!-- 05: Explainable and Trustworthy AI -->
+      <li class="r-card">
+        <div class="r-num">05</div>
+        <div class="r-body">
+          <h3>Explainable and Trustworthy AI for Security</h3>
+          <p>
+            We investigate methods to make AI-based cybersecurity
+            systems more transparent, reliable, and understandable.
+            Our research focuses on explaining model predictions,
+            evaluating the quality of AI-generated security
+            explanations, and assessing whether security decisions
+            are supported by relevant evidence.
+          </p>
+          <ul class="tags">
+            <li>Explainable AI</li>
+            <li>Trustworthy AI</li>
+            <li>SHAP</li>
+            <li>Evidence Grounding</li>
+            <li>AI Reliability</li>
+          </ul>
+        </div>
+        <span class="status status-active">Active</span>
+      </li>
+
+      <!-- 06: Adaptive Cyber Defence -->
+      <li class="r-card">
+        <div class="r-num">06</div>
+        <div class="r-body">
+          <h3>Intent-Aware Adaptive Cyber Defence</h3>
+          <p>
+            We develop intelligent security frameworks that move
+            beyond attack detection toward adaptive threat
+            mitigation and decision support. Our research
+            investigates how communication intent, network
+            conditions, and available computing resources can
+            guide security decisions in IoT and edge environments,
+            particularly for mission-critical applications.
+          </p>
+          <ul class="tags">
+            <li>Adaptive Cyber Defence</li>
+            <li>Intent-Aware Security</li>
+            <li>Threat Mitigation</li>
+            <li>Resource Management</li>
+            <li>Critical Infrastructure</li>
+          </ul>
+        </div>
+        <span class="status status-active">Active</span>
+      </li>
+
+      <!-- 07: Game-Theoretic Security -->
+      <li class="r-card">
+        <div class="r-num">07</div>
+        <div class="r-body">
+          <h3>Game-Theoretic and AI-Assisted Security Decisions</h3>
+          <p>
+            We investigate how game theory and artificial
+            intelligence can support security decisions in
+            environments where attackers and defenders have
+            competing objectives. Our research explores the
+            reliability of AI-generated security recommendations
+            and strategies for allocating limited verification
+            resources to reduce security risks.
+          </p>
+          <ul class="tags">
+            <li>Game Theory</li>
+            <li>Adversarial Decisions</li>
+            <li>AI Verification</li>
+            <li>Security Optimization</li>
+            <li>Human-AI Decisions</li>
+          </ul>
+        </div>
+        <span class="status">Emerging</span>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+
+<!-- TESTBED -->
+<section class="section" id="testbed">
+  <div class="wrap">
+
+    <p class="eyebrow">Research Infrastructure</p>
+    <h2>IoT and Edge Security Testbed</h2>
+
+    <p class="section-lead" style="text-align: justify;">
+      
+      The testbed provides a controlled environment for collecting
+      realistic network traffic, developing intent-aware datasets,
+      and evaluating intelligent security solutions for connected
+      and mission-critical systems.
+    </p>
+
+    <!-- TESTBED ARCHITECTURE -->
+    <h3 class="sub-h">Testbed Architecture</h3>
+
+    <div class="pipeline" role="list">
+
+      <div class="p-step" role="listitem">
+        <span class="p-n">1</span>
+        <h3>Connected Devices</h3>
+        <p>
+          Sensors, RFID readers, cameras, smart lighting,
+          and actuators generate data and communicate using
+          different protocols.
+        </p>
+      </div>
+
+      <div class="p-arrow" aria-hidden="true"></div>
+
+      <div class="p-step" role="listitem">
+        <span class="p-n">2</span>
+        <h3>Data Aggregation</h3>
+        <p>
+          Raspberry Pi-based services collect device data
+          and support communication using MQTT, CoAP,
+          and other IoT protocols.
+        </p>
+      </div>
+
+      <div class="p-arrow" aria-hidden="true"></div>
+
+      <div class="p-step" role="listitem">
+        <span class="p-n">3</span>
+        <h3>Edge Monitoring</h3>
+        <p>
+          Edge computing nodes monitor network activity,
+          capture traffic, and support security analysis
+          using tools such as Zeek and Wireshark.
+        </p>
+      </div>
+
+      <div class="p-arrow" aria-hidden="true"></div>
+
+      <div class="p-step" role="listitem">
+        <span class="p-n">4</span>
+        <h3>Security Datasets</h3>
+        <p>
+          Device activities, communication patterns,
+          and network observations are used to develop
+          labelled datasets for AI-based cybersecurity
+          research.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- TESTBED COMPONENTS -->
+    <h3 class="sub-h">Testbed Components</h3>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col">Devices and Technologies</th>
+            <th scope="col">Research Purpose</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><b>Environmental Monitoring</b></td>
+            <td>Temperature, gas sensors, Raspberry Pi Pico</td>
+            <td>Periodic sensing and device behaviour analysis</td>
+          </tr>
+
+          <tr>
+            <td><b>Access Control</b></td>
+            <td>RFID readers and experimental credentials</td>
+            <td>Event-driven communication and security monitoring</td>
+          </tr>
+
+          <tr>
+            <td><b>Smart Devices</b></td>
+            <td>Smart lighting, actuators, cameras</td>
+            <td>Command-response and event-based communication</td>
+          </tr>
+
+          <tr>
+            <td><b>Communication Services</b></td>
+            <td>MQTT, CoAP, and experimental protocol services</td>
+            <td>Multi-protocol traffic collection and analysis</td>
+          </tr>
+
+          <tr>
+            <td><b>Edge Infrastructure</b></td>
+            <td>Raspberry Pi, Zeek, Wireshark, Mosquitto</td>
+            <td>Network monitoring, data collection,
+                and security evaluation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RESEARCH CAPABILITIES -->
+    <div class="tb-cols">
+
+      <div class="tb-panel">
+        <h3>Research Capabilities</h3>
+
+        <ul class="check">
+          <li>
+            <b>Intent-Aware Data Collection:</b>
+            Capturing device communication patterns
+            and associated network activities.
+          </li>
+
+          <li>
+            <b>Device Behaviour Profiling:</b>
+            Studying normal and abnormal communication
+            across heterogeneous IoT devices.
+          </li>
+
+          <li>
+            <b>Cyberattack Analysis:</b>
+            Supporting controlled experiments to evaluate
+            intrusion detection and threat analysis methods.
+          </li>
+
+          <li>
+            <b>Edge AI Evaluation:</b>
+            Investigating lightweight and intelligent
+            security solutions for resource-constrained systems.
+          </li>
+
+          <li>
+            <b>Dataset Development:</b>
+            Generating labelled data for machine learning
+            and cybersecurity research.
+          </li>
+        </ul>
+      </div>
+
+      <div class="tb-panel">
+        <h3>Privacy and Responsible Research</h3>
+
+        <ul class="check">
+          <li>
+            Experiments are conducted within a
+            controlled laboratory environment.
+          </li>
+
+          <li>
+            RFID experiments use dedicated
+            experimental credentials.
+          </li>
+
+          <li>
+            Camera-based experiments focus on
+            device behaviour and network activity,
+            with privacy safeguards.
+          </li>
+
+          <li>
+            Data collection is designed to minimize
+            unnecessary personal information.
+          </li>
+
+          <li>
+            Research activities follow applicable
+            institutional policies and ethical requirements.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- TEAM -->
+<section class="section section-alt" id="team">
+  <div class="wrap">
+    <p class="eyebrow">People</p>
+    <h2>Our Team</h2>
+
+    <!-- PRINCIPAL INVESTIGATOR -->
+    <article class="pi-card">
+      <img src="images/team/Mak.PNG"
+           alt="Photo of Dr. Makhdumabanu Saiyed"
+           width="200" height="200">
+
+      <div>
+        <p class="role">Principal Investigator</p>
+        <h3>Dr. Makhdumabanu Saiyed</h3>
+
+        <p class="pi-title">
+          Assistant Professor, Trent University ·
+          PhD (University of Regina)
+        </p>
+
+        <p>
+          Research interests: AI-driven cybersecurity,
+          network security, Internet of Things (IoT),
+          federated learning, large language models,
+          explainable AI, and adaptive cyber defence.
+        </p>
+
+        <p class="pi-contact">
+  Office DRB-430, Durham GTA campus ·
+  <a href="mailto:makhdumabanusaiyed@trentu.ca">
+    Email Me
+  </a> ·
+  <a href="https://www.trentu.ca/cois/faculty-research"
+     target="_blank" rel="noopener">
+    Faculty Profile
+  </a>
+</p>
+      </div>
+    </article>
+
+    <!-- RESEARCH TEAM -->
+    <ul class="team-grid">
+
+      <!-- Elma Mahbub -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Elma Mahbub"
+             width="400" height="400" loading="lazy">
+        <h3>Elma Mahbub</h3>
+        <p class="m-role">Master's Student (Research)</p>
+        <p class="m-focus">Zero-Day Attack Detection</p>
+      </li>
+      
+      <!-- Lizi -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Lizi"
+             width="400" height="400" loading="lazy">
+        <h3>Elizabeth Villas</h3>
+        <p class="m-role">Master's Student (Research)</p>
+        <p class="m-focus">
+          Lightweight Intrusion Detection
+        </p>
+      </li>
+
+      <!-- Mitul Patel -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Mitul Patel"
+             width="400" height="400" loading="lazy">
+        <h3>Mitul Patel</h3>
+        <p class="m-role">Master's Student (Research)</p>
+        <p class="m-focus">Federated Learning for Cybersecurity</p>
+      </li>
+
+      <!-- Kendal George -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Kendal George"
+             width="400" height="400" loading="lazy">
+        <h3>Kendal George</h3>
+        <p class="m-role">Undergraduate Student, 3rd Year</p>
+        <p class="m-focus">IoT Testbed Development</p>
+      </li>
+
+      <!-- Krina Vyas -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Krina Vyas"
+             width="400" height="400" loading="lazy">
+        <h3>Krina Vyas</h3>
+        <p class="m-role">Student Researcher</p>
+        <p class="m-focus">
+          Game Theory for Cybersecurity
+        </p>
+      </li>
+
+      <!-- Shamia Alam Shova -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Shamia Alam Shova"
+             width="400" height="400" loading="lazy">
+        <h3>Shamia Alam Shova</h3>
+        <p class="m-role">Undergraduate Student, 4th Year</p>
+        <p class="m-focus">Device Behaviour Profiling</p>
+      </li>
+
+      <!-- Rahfay Saberi -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Rahfay Saberi"
+             width="400" height="400" loading="lazy">
+        <h3>Rahfay Saberi</h3>
+        <p class="m-role">Undergraduate Student</p>
+        <p class="m-focus">
+          LLM-Assisted Cybersecurity and Threat Analysis
+        </p>
+      </li>
+
+
+
+      <!-- Patrick Hokonya -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Patrick Hokonya"
+             width="400" height="400" loading="lazy">
+        <h3>Patrick Hokonya</h3>
+        <p class="m-role">Undergraduate Student</p>
+        <p class="m-focus">IoT Testbed Development</p>
+      </li>
+
+      <!-- Shuang Zhou -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Shuang Zhou"
+             width="400" height="400" loading="lazy">
+        <h3>Shuang Zhou</h3>
+        <p class="m-role">Postgraduate Certificate Student</p>
+        <p class="m-focus">Transferable Intrusion Detection</p>
+      </li>
+
+      <!-- Mahbod Mahmodani -->
+      <li class="member">
+        <img src="images/team/placeholder.svg"
+             alt="Photo of Mahbod Mahmodani"
+             width="400" height="400" loading="lazy">
+        <h3>Mahbod Mahmodani</h3>
+        <p class="m-role">Undergraduate Student</p>
+        <p class="m-focus">Insider Attack Detection</p>
+      </li>
+
+
+
+    </ul>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow">Gallery</p>
+    <h2>Inside the lab</h2>
+    <p class="section-lead">The hardware our students built and operate. Select a photo to enlarge it.</p>
+    <ul class="gallery">
+      <li class="g-wide"><button class="g-item" data-index="0"><img src="images/gallery/lab-overview.jpg" alt="Wide view of the lab with four workstations and testbed hardware on the desks" loading="lazy"><span class="g-cap">The lab at a glance: workstations for the aggregator, edge server and field-device clusters.</span></button></li>
+      <li><button class="g-item" data-index="1"><img src="images/gallery/sensor-boards.jpg" alt="Top-down view of breadboards with Pico boards, gas sensors and LEDs next to a USB hub" loading="lazy"><span class="g-cap">Sensor and actuator boards: temperature and gas sensors, LED actuators and a shared USB hub.</span></button></li>
+      <li><button class="g-item" data-index="2"><img src="images/gallery/rfid-readers.jpg" alt="Two RFID reader modules wired to a Pico board with blue key fobs" loading="lazy"><span class="g-cap">Access control: two RFID readers on one board, used only with dedicated experimental fobs and cards.</span></button></li>
+      <li class="g-wide"><button class="g-item" data-index="3"><img src="images/gallery/field-layer.jpg" alt="Desk covered with wired sensor boards and RFID readers next to a monitor showing data records" loading="lazy"><span class="g-cap">Field layer in operation: the monitor shows incoming records, each labelled with the device's intent.</span></button></li>
+      <li><button class="g-item" data-index="4"><img src="images/gallery/core-pis.jpg" alt="Two Raspberry Pi computers with network cables labelled 3 and 4" loading="lazy"><span class="g-cap">Core Raspberry Pi nodes, numbered to match their roles in the testbed.</span></button></li>
+      <li><button class="g-item" data-index="5"><img src="images/gallery/smart-bulbs.jpg" alt="Four smart bulbs on black lamp bases" loading="lazy"><span class="g-cap">Smart lighting: four commercial smart bulbs switched by a controller Pi.</span></button></li>
+      <li><button class="g-item" data-index="6"><img src="images/gallery/aggregator-station.jpg" alt="Two monitors with terminal output above desks of wired hardware" loading="lazy"><span class="g-cap">Aggregator workstation running the Cluster-1 aggregator.</span></button></li>
+      <li class="g-wide"><button class="g-item" data-index="7"><img src="images/gallery/switch-camera.jpg" alt="Network switch with coloured Ethernet cables beside a Raspberry Pi camera module" loading="lazy"><span class="g-cap">Network switch and Raspberry Pi camera node. The camera reports motion levels only, never images.</span></button></li>
+      <li><button class="g-item" data-index="8"><img src="images/gallery/edge-server-station.jpg" alt="Three monitors on a desk with Raspberry Pi boards and keyboards" loading="lazy"><span class="g-cap">Edge-server workstation, where flow records are matched with device intent.</span></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="section" id="join">
+  <div class="wrap join-grid">
+    <div class="join-card">
+      <p class="eyebrow">Join the lab</p>
+      <h2>Prospective students</h2>
+      <p style="text-align: justify;">We welcome undergraduate, graduate, and postgraduate certificate students in Computer Science, Artificial Intelligence, or related fields who are interested in AI-driven cybersecurity, IoT and network security, and trustworthy AI.</p>
+      <p style="text-align: justify;">To apply, email your CV and a short note on your research interests to <a href="mailto:makhdumabanusaiyed@trentu.ca">Dr. Makhdumabanu Saiyed</a>.</p>
+      <a class="btn btn-primary" href="mailto:makhdumabanusaiyed@trentu.ca?subject=SINE%20Lab%20application">Email the lab</a>
+    </div>
+    <div class="join-card">
+      <p class="eyebrow">Visit</p>
+      <h2>Find us</h2>
+      <p class="addr">Building B, 4th floor, Room 430<br>Trent University Durham GTA<br>55 Thornton Road South, Oshawa, ON</p>
+      <table class="hours">
+        <caption>Visiting hours, fall term</caption>
+        <tr><th scope="row">Monday</th><td>11:00 AM – 3:00 PM</td></tr>
+        <tr><th scope="row">Friday</th><td>11:00 AM – 5:00 PM</td></tr>
+      </table>
+      <p class="note">Collaboration enquiries from academic and industry partners are welcome by email.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <div class="f-brand">
+      <img class="f-shield" src="images/logo-shield.svg" alt="SINE Lab shield logo" width="72" height="76">
+      <div><p class="f-name">SINE Lab</p><p>Security, Intelligence, Networks &amp; Edge</p></div>
+    </div>
+    <p>Trent University Durham GTA · 55 Thornton Road South, Oshawa, ON</p>
+    <p>© <span id="year">2026</span> SINE Lab, Trent University</p>
+  </div>
+</footer>
+
+<div class="bughome" id="bugHome" aria-hidden="true" title="Drag to move the beetle's home">
+  <svg viewBox="0 0 64 60">
+    <ellipse class="bh-ground" cx="32" cy="55" rx="28" ry="4"/>
+    <path class="bh-wall" d="M12 28h40v26H12z"/>
+    <path class="bh-roof-fill" d="M9 29 32 10l23 19z"/>
+    <path class="bh-roof" d="M6 30 32 8l26 22"/>
+    <rect class="bh-chim" x="42" y="12" width="6" height="10" rx="1"/>
+    <path class="bh-door" d="M25 54V43a7 7 0 0 1 14 0v11z"/>
+    <circle class="bh-knob" cx="36" cy="48.5" r="1"/>
+    <rect class="bh-win" x="15.5" y="34" width="7" height="7" rx="1"/>
+    <text class="bh-zzz" x="44" y="10">z</text><text class="bh-zzz z2" x="50" y="4">z</text>
+  </svg>
+</div>
+<div class="roamer" id="roamer" aria-hidden="true">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><g class="legs"><path d="M8.2 10.5 4 8.2M7.6 13.6H3.4M8.2 16.6 4 19"/><path d="M15.8 10.5 20 8.2M16.4 13.6h4.2M15.8 16.6 20 19"/></g><path class="ant" d="M10.6 5.4 8.8 2.4M13.4 5.4l1.8-3"/><circle class="hd" cx="12" cy="6.6" r="2.5"/><ellipse class="bd" cx="12" cy="14.2" rx="4.7" ry="6.2"/><path class="seam" d="M12 8.6v11.6"/><circle class="spot" cx="10" cy="12.4" r="1"/><circle class="spot" cx="14" cy="12.4" r="1"/><circle class="spot" cx="10.2" cy="16.6" r=".9"/><circle class="spot" cx="13.8" cy="16.6" r=".9"/></svg>
+</div>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-prev" aria-label="Previous photo">‹</button>
+  <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Next photo">›</button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/beetle.js"></script>
+</body>
+</html>
